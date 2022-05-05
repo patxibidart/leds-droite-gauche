@@ -1,0 +1,16 @@
+let strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB)
+strip.setBrightness(100)
+let droite = strip.range(1, 11)
+let gauche = strip.range(13, 23)
+basic.forever(function () {
+    gauche.showColor(neopixel.colors(NeoPixelColors.Yellow))
+    basic.pause(1000)
+    gauche.clear()
+    basic.pause(100)
+})
+basic.forever(function () {
+    droite.showColor(neopixel.colors(NeoPixelColors.Red))
+    basic.pause(1000)
+    droite.clear()
+    basic.pause(50)
+})
